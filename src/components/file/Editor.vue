@@ -114,7 +114,6 @@
         </template>
         <template v-else-if="mode === 'code'">
           <MonacoEditor v-model="model" :language="extension" :validation="schemaValidation"/>
-          !!!
         </template>
         <template v-else-if="mode === 'datagrid'">
           <div class="overflow-x-auto">
@@ -153,24 +152,24 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed, inject } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import Datagrid from '@/components/file/Datagrid.vue';
+import Delete from '@/components/file/Delete.vue';
+import Field from '@/components/file/Field.vue';
+import History from '@/components/file/History.vue';
+import MonacoEditor from '@/components/file/MonacoEditor.vue';
+import Rename from '@/components/file/Rename.vue';
+import Dropdown from '@/components/utils/Dropdown.vue';
+import Icon from '@/components/utils/Icon.vue';
+import useSchema from '@/composables/useSchema';
+import config from '@/services/config';
+import github from '@/services/github';
+import notifications from '@/services/notifications';
+import serialization from '@/services/serialization';
 import { Base64 } from 'js-base64';
 import { debounce } from 'lodash';
 import moment from 'moment';
-import notifications from '@/services/notifications';
-import github from '@/services/github';
-import config from '@/services/config';
-import serialization from '@/services/serialization';
-import useSchema from '@/composables/useSchema';
-import MonacoEditor from '@/components/file/MonacoEditor.vue';
-import Datagrid from '@/components/file/Datagrid.vue';
-import Dropdown from '@/components/utils/Dropdown.vue';
-import Icon from '@/components/utils/Icon.vue';
-import Field from '@/components/file/Field.vue';
-import Delete from '@/components/file/Delete.vue';
-import History from '@/components/file/History.vue';
-import Rename from '@/components/file/Rename.vue';
+import { computed, inject, onMounted, ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 const serializedTypes = ['yaml-frontmatter', 'json-frontmatter', 'toml-frontmatter', 'yaml', 'json', 'toml'];
 
