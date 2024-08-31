@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import Content from '@/components/Content.vue';
+import Editor from '@/components/file/Editor.vue';
+import Media from '@/components/Media.vue';
 import github from '@/services/github';
-import Content from '@/components/Content.vue'
-import Editor from '@/components/file/Editor.vue'
-import Media from '@/components/Media.vue'
-import LoginView from '@/views/LoginView.vue'
-import RepoView from '@/views/RepoView.vue'
-import HomeView from '@/views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue';
+import LoginView from '@/views/LoginView.vue';
+import RepoView from '@/views/RepoView.vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -71,7 +71,7 @@ const router = createRouter({
             path: '.pages.yml',
             title: 'Settings',
             description: 'Settings are saved in a `.pages.yml` file at the root of your repository. [Read the documentation](https://pagescms.org/docs/configuration).',
-            format: 'code',
+            format: 'yaml',
           })
         },
         {

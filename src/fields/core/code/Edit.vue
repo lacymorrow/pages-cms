@@ -1,22 +1,19 @@
 <template>
-  <MonacoEditor
-    :modelValue="modelValue"
-    :language="field.options?.format"
-    @update:modelValue="$emit('update:modelValue', $event)"
-  />
+  <MonacoEditor :modelValue="modelValue" :language="field.options?.format"
+    @update:modelValue="$emit('update:modelValue', $event)" />
   <ul v-if="errors.length" class="mt-2 text-sm text-red-500 dark:text-red-400">
     <li v-for="error in errors" :key="error" class="flex gap-x-1 items-center">
-      <Icon name="Ban" class="h-3 w-3 stroke-[2.5]"/>
+      <Icon name="Ban" class="h-3 w-3 stroke-[2.5]" />
       {{ error }}
     </li>
   </ul>
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import MonacoEditor from '@/components/file/MonacoEditor.vue';
-import useFieldValidation from '@/composables/useFieldValidation';
 import Icon from '@/components/utils/Icon.vue';
+import useFieldValidation from '@/composables/useFieldValidation';
+import { ref } from 'vue';
 
 const { validateRequired, validatePattern, validateLength } = useFieldValidation();
 

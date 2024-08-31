@@ -198,8 +198,8 @@ const validationSchema = {
         },
         "format": {
           "type": ["string", "null"],
-          "enum": ["yaml-frontmatter", "json-frontmatter", "toml-frontmatter", "yaml", "json", "toml", "datagrid", "code", "raw"],
-          "errorMessage": "Property 'format' must be one of the specified formats: yaml-frontmatter, json-frontmatter, toml-frontmatter, yaml, json, toml, datagrid, code, raw."
+          "enum": ["yaml-frontmatter", "json-frontmatter", "toml-frontmatter", "yaml", "json", "toml", "datagrid", "code", "raw", "react"],
+          "errorMessage": "Property 'format' must be one of the specified formats: yaml-frontmatter, json-frontmatter, toml-frontmatter, yaml, json, toml, datagrid, code, raw, react."
         },
         "delimiters": {
           "type": ["string", "array"],
@@ -279,7 +279,7 @@ const validationSchema = {
         },
         "type": {
           "type": "string",
-          "enum": ["boolean", "code", "date", "image", "number", "object", "rich-text", "select", "string", "text"],
+          "enum": ["boolean", "code", "date", "image", "number", "object", "react", "rich-text", "select", "string", "text"],
           "errorMessage": "Property 'type' must be one of the valid field types (see documentation)."
         },
         "default": {
