@@ -1,8 +1,12 @@
 {
-  "name": "pages-cms",
+  "name": "mdx-cms",
   "version": "0.3.0",
   "private": true,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lacymorrow/pages-cms.git"
+  },
   "scripts": {
     "dev": "wrangler pages dev -- npm run vite",
     "vite": "vite",
